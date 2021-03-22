@@ -1,0 +1,28 @@
+﻿<Window x:Class="SearchPanel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:SearchPanel"
+        xmlns:interactivity="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        Title="Incremental Search" Icon="App.ico">
+   
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0">
+            <TextBox x:Name="textbox" Width="200" Height="30"/>
+        </StackPanel>
+        <syncfusion:SfDataGrid x:Name="sfGrid" Grid.Row="1"
+                               AllowFiltering="True"
+                               AllowGrouping="True"
+                               ShowGroupDropArea="True"
+                               ItemsSource="{Binding DynamicOrders}"                             
+                               AutoGenerateColumns="True"
+                              >
+        </syncfusion:SfDataGrid>
+    </Grid>
+    
+</Window>

@@ -1,0 +1,28 @@
+﻿<Application x:Class="SfDataGridDemo.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+
+        <Style TargetType="syncfusion:GridCaptionSummaryCell">
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="FontFamily" Value="Castellar" />
+            <Setter Property="Foreground" Value="Orange" />
+        </Style>
+
+        <Style TargetType="syncfusion:GridGroupSummaryCell">
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="FontFamily" Value="Algerian" />
+            <Setter Property="Foreground" Value="Red" />
+        </Style>
+
+
+        <Style TargetType="syncfusion:GridTableSummaryCell">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="FontFamily" Value="Cambria" />
+            <Setter Property="Foreground" Value="Green" />
+        </Style>
+
+    </Application.Resources>
+</Application>

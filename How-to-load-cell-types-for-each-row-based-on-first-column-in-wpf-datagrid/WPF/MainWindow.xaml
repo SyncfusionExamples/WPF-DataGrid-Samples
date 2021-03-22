@@ -1,0 +1,41 @@
+﻿<Window x:Class="SfDataGridDemo.MainWindow"
+          xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+          xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+          xmlns:interactivity="http://schemas.microsoft.com/expression/2010/interactivity"
+         xmlns:local="clr-namespace:SfDataGridDemo"
+         xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        Title="MainWindow" Height="700" Width="700" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <local:ViewModel x:Key="viewmodel" />
+        <local:DataTemplateSelectorExt x:Key="templateselctor"/>
+    </Window.Resources>    
+    <Window.DataContext>
+        <local:ViewModel  />
+    </Window.DataContext>
+
+    <Grid>
+
+        <syncfusion:SfDataGrid x:Name="datagrid" 
+                               AllowEditing="True"
+                              AutoGenerateColumns="False"
+                              ItemsSource="{Binding OrderList}"
+                              ShowRowHeader="True" >
+            <interactivity:Interaction.Behaviors>
+                <local:SfDataGridBehavior/>
+            </interactivity:Interaction.Behaviors>
+            <syncfusion:SfDataGrid.Columns>
+                <syncfusion:GridComboBoxColumn MappingName="ProductName" 
+                                               ItemsSource="{Binding ComboBoxItemsSource, Source={StaticResource viewmodel}}" />
+                
+                <syncfusion:GridTemplateColumn HeaderText="Order ID"  syncfusion:FocusManagerHelper.WantsKeyInput="True"
+                                               MappingName="OrderID" 
+                                               CellTemplateSelector="{StaticResource templateselctor}"/>
+                
+                <syncfusion:GridTemplateColumn HeaderText="Product ID"  syncfusion:FocusManagerHelper.WantsKeyInput="True"
+                                               MappingName="ProductID"
+                                               CellTemplateSelector="{StaticResource templateselctor}"/>
+
+            </syncfusion:SfDataGrid.Columns>
+        </syncfusion:SfDataGrid>
+    </Grid>
+</Window>

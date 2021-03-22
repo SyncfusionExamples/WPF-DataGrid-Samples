@@ -1,0 +1,64 @@
+﻿<Page
+    x:Class="MasterDetailsViewDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:MasterDetailsViewDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:syncfusion="using:Syncfusion.UI.Xaml.Grid"
+   xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.DataContext>
+        <local:ViewModel />
+    </Page.DataContext>
+    <Grid>
+        <syncfusion:SfDataGrid x:Name="dataGrid"                              
+                                       AutoGenerateColumns="False"
+                                       HideEmptyGridViewDefinition="True"
+                                       ItemsSource="{Binding Path=OrdersDetails}"
+                                       NavigationMode="Cell"
+                                       ShowGroupDropArea="False">
+            <interactivity:Interaction.Behaviors>
+                <local:Behaviour/>
+            </interactivity:Interaction.Behaviors>
+            <syncfusion:SfDataGrid.DetailsViewDefinition>
+                <syncfusion:GridViewDefinition RelationalColumn="OrderDetails">
+                    <syncfusion:GridViewDefinition.DataGrid>
+                        <syncfusion:SfDataGrid x:Name="FirstDetailsViewGrid" >
+                            <syncfusion:SfDataGrid.Columns>
+                                <syncfusion:GridTextColumn MappingName="OrderID" />
+                                <syncfusion:GridTextColumn MappingName="ProductID" TextAlignment="Right" />
+                                <syncfusion:GridTextColumn HeaderText="Unit Price"
+                                                                   MappingName="UnitPrice"
+                                                                   TextAlignment="Right" />
+                                <syncfusion:GridTextColumn MappingName="Quantity" TextAlignment="Right" />
+                                <syncfusion:GridTextColumn MappingName="Discount" TextAlignment="Right" />
+                                <syncfusion:GridTextColumn MappingName="CustomerID" />
+                                <syncfusion:GridDateTimeColumn HeaderText="Order Date"
+                                                                       MappingName="OrderDate"
+                                                                       TextAlignment="Right" />
+                            </syncfusion:SfDataGrid.Columns>
+                        </syncfusion:SfDataGrid>
+                    </syncfusion:GridViewDefinition.DataGrid>
+                </syncfusion:GridViewDefinition>
+            </syncfusion:SfDataGrid.DetailsViewDefinition>
+
+
+            <syncfusion:SfDataGrid.Columns>
+                <syncfusion:GridTextColumn MappingName="OrderID" />
+                <syncfusion:GridTextColumn MappingName="CustomerID" />
+                <syncfusion:GridDateTimeColumn Width="200"
+                                                       HeaderText="Shipping Date"
+                                                       MappingName="ShippingDate"
+                                                       TextAlignment="Right" />
+                <syncfusion:GridNumericColumn HeaderText="Supplier ID"
+                                                      MappingName="EmployeeID"
+                                                      />
+                <syncfusion:GridTextColumn HeaderText="Ship City" MappingName="ShipCity" />
+                <syncfusion:GridTextColumn HeaderText="Ship Country" MappingName="ShipCountry" />
+               
+                <syncfusion:GridCheckBoxColumn HeaderText="Closed" MappingName="IsClosed" />
+            </syncfusion:SfDataGrid.Columns>
+        </syncfusion:SfDataGrid>
+    </Grid>
+</Page>

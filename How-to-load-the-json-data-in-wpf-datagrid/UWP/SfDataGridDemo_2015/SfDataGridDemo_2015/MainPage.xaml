@@ -1,0 +1,32 @@
+﻿<Page
+    x:Class="SfDataGridDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SfDataGridDemo"
+    xmlns:Syncfusion="using:Syncfusion.UI.Xaml.Grid"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.DataContext>
+        <local:ViewModel/>
+    </Page.DataContext>
+
+    
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Syncfusion:SfDataGrid x:Name="sfdatagrid" ColumnSizer="Star" AllowSorting="True"
+                               AutoGenerateColumns="False">
+            <interactivity:Interaction.Behaviors>
+                <local:SfDataGridBehavior/>
+            </interactivity:Interaction.Behaviors>
+            <Syncfusion:SfDataGrid.Columns>
+                <Syncfusion:GridTextColumn MappingName="Values[OrderID]" HeaderText="Order ID"/>
+                <Syncfusion:GridTextColumn MappingName="Values[EmployeeID]" HeaderText="Employee ID"/>
+                <Syncfusion:GridTextColumn MappingName="Values[FirstName]" HeaderText="First Name"/>
+                <Syncfusion:GridTextColumn MappingName="Values[LastName]" HeaderText="Last Name"/>
+                <Syncfusion:GridTextColumn MappingName="Values[Country]" HeaderText="Country"/>
+                <Syncfusion:GridTextColumn MappingName="Values[City]" HeaderText="City"/>
+            </Syncfusion:SfDataGrid.Columns>
+        </Syncfusion:SfDataGrid>
+    </Grid>
+</Page>

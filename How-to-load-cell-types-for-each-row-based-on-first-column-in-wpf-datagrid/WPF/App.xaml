@@ -1,0 +1,28 @@
+﻿<Application x:Class="SfDataGridDemo.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+             StartupUri="MainWindow.xaml">
+    <Application.Resources>
+        <DataTemplate x:Key="TextBoxTemplate">
+            <TextBox Text="{Binding Path=Value,Mode=TwoWay, NotifyOnValidationError=True}"  />
+        </DataTemplate>
+        <DataTemplate x:Key="PercentTemplate">
+            <syncfusion:PercentTextBox Width="160" Height="30" PercentValue="{Binding Path=Value,Mode=TwoWay, NotifyOnValidationError=True}"/>
+        </DataTemplate>
+        <DataTemplate x:Key="DoubleTemplate">
+            <syncfusion:DoubleTextBox Width="160" Height="30" Value="{Binding Path=Value,Mode=TwoWay, NotifyOnValidationError=True}"/>
+        </DataTemplate>
+        <DataTemplate x:Key="CurrencyTemplate">
+            <syncfusion:CurrencyTextBox Width="160" Height="30" Value="{Binding Path=Value,Mode=TwoWay, NotifyOnValidationError=True}"/>
+        </DataTemplate>
+        <DataTemplate x:Key="UpdownTemplate">
+            <syncfusion:UpDown Value="{Binding Path=Value,Mode=TwoWay, NotifyOnValidationError=True}"/>
+        </DataTemplate>
+
+        <DataTemplate x:Key="TextBlockTemplate">
+            <TextBlock Text="{Binding Path=Value,Mode=TwoWay, NotifyOnValidationError=True}" />
+            </DataTemplate>
+       
+    </Application.Resources>
+</Application>

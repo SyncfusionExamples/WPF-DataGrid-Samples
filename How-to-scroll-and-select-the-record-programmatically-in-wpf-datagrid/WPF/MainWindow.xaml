@@ -1,0 +1,25 @@
+﻿<Window x:Class="SfDataGridDemo.MainWindow"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:SfDataGridDemo"
+        Title="ScrollInView" >
+   
+    <Window.DataContext>
+        <local:Viewmodel/>
+    </Window.DataContext>
+
+    <Grid>
+        <syncfusion:SfDataGrid  x:Name="dataGrid"
+                                ColumnSizer="Star"
+                                ItemsSource="{Binding ItemSource}" 
+                                AutoGenerateColumns="False">
+            <syncfusion:SfDataGrid.Columns>
+                <syncfusion:GridTextColumn MappingName="EmployeeName" HeaderText="Name"/>
+                <syncfusion:GridTextColumn MappingName="EmployeeArea" HeaderText="Area"/>
+                <syncfusion:GridTextColumn MappingName="EmployeeCity" HeaderText="City"/>
+                <syncfusion:GridCurrencyColumn MappingName="EmployeeSalary" HeaderText="Salary" />
+            </syncfusion:SfDataGrid.Columns>
+        </syncfusion:SfDataGrid>
+    </Grid>
+  </Window>

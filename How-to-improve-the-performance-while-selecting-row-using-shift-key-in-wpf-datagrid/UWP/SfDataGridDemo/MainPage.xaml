@@ -1,0 +1,54 @@
+﻿<Page
+    x:Class="SfDataGridDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SfDataGridDemo"
+    xmlns:syncfusion="using:Syncfusion.UI.Xaml.Grid"
+    xmlns:interactivity="using:Microsoft.Xaml.Interactivity"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.DataContext>
+        <local:ViewModel />
+    </Page.DataContext>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <syncfusion:SfDataGrid AllowFiltering="True"
+                                       AllowGrouping="True"
+                                       x:Name="datagrid"
+                                       ColumnSizer="Star"
+                                       SelectionMode="Extended"
+                                       AutoGenerateColumns="False"
+                                       ItemsSource="{Binding ViewSource}"
+                                       NavigationMode="Row"
+                                       ShowGroupDropArea="True">
+            <interactivity:Interaction.Behaviors>
+                <local:SfDataGridBehavior/>
+            </interactivity:Interaction.Behaviors>
+
+            <syncfusion:SfDataGrid.Columns>
+                <syncfusion:GridTextColumn HeaderText="Employee ID" MappingName="EmployeeID" />
+                <syncfusion:GridTextColumn HeaderText="Employee Name" MappingName="EmployeeName" />
+                <syncfusion:GridTextColumn MappingName="Gender" />
+                <syncfusion:GridNumericColumn MappingName="Salary" FormatString="c" />
+                <syncfusion:GridDateTimeColumn MappingName="BirthDate" HeaderText="Birth Date"  />
+                <syncfusion:GridTextColumn MappingName="SickLeaveHours" TextAlignment="Left"  HeaderText="Sick Leave Hours"/>
+            </syncfusion:SfDataGrid.Columns>
+        </syncfusion:SfDataGrid>
+
+        <StackPanel Grid.Column="1" Margin="5">
+            <Button x:Name="SelectAllButton" Content="SelectAll" Width="200" Height="30"  
+                    Command="{Binding DataContext.SelectAllButton,ElementName=datagrid}" CommandParameter="{Binding ElementName=datagrid}"/>
+            <TextBlock x:Name="textBlock"  Height="50" Margin="10" 
+                       Text="{Binding DataContext.TotalTimeElapsed,ElementName=datagrid,Mode=TwoWay}" />
+            <Button x:Name="RemoveSelectAllButton" Content="RemoveSelectAll" Width="200" Height="30" 
+                    Command="{Binding DataContext.RemoveSelectAllButton,ElementName=datagrid}" CommandParameter="{Binding ElementName=datagrid}" />
+        </StackPanel>
+    </Grid>
+    
+</Page>
