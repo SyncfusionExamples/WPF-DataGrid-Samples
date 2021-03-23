@@ -1,0 +1,5 @@
+# How to disable the hyperlink based on cell value in grid hyperlink column in WPF DataGrid (SfDataGrid)?
+
+This sample show cases how to diable the hyperlink based on the cell value in grid hyperlink column in [WPF DataGrid](https://www.syncfusion.com/wpf-ui-controls/datagrid) (SfDataGrid).
+
+You can disable the HyperLink in [GridHyperLinkColumn](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml.Grid.GridHyperlinkColumn.html) based on cell value using converter in [WPF DataGrid](https://www.syncfusion.com/wpf-ui-controls/datagrid) (SfDataGrid).

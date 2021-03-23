@@ -1,0 +1,38 @@
+﻿<Window x:Class="SfDataGridDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Syncfusion="http://schemas.syncfusion.com/wpf"
+        xmlns:interactivity="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:local="clr-namespace:SfDataGridDemo"
+        Title="SfDataGrid Demo"
+        Width="1024"
+        Height="710"
+        Icon="App.ico"
+        WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <local:ViewModel x:Name="view" />
+    </Window.DataContext>
+    <Window.Resources>
+        <local:Converter x:Key="converter" />
+        <Style TargetType="Syncfusion:GridCell">
+            <Style.Resources>
+                <Style TargetType="Hyperlink">
+                    <Setter Property="IsEnabled" Value="{Binding RelativeSource={RelativeSource AncestorType=Syncfusion:GridCell}, Converter={StaticResource converter}}" />
+                </Style>
+            </Style.Resources>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Syncfusion:SfDataGrid Name="datagrid"
+                               AllowEditing="True"
+                               AutoGenerateColumns="False"
+                               ItemsSource="{Binding EmployeeDetails}">
+            <Syncfusion:SfDataGrid.Columns>
+                <Syncfusion:GridHyperlinkColumn MappingName="EmployeeName" />
+                <Syncfusion:GridHyperlinkColumn MappingName="EmployeeArea" />
+                <Syncfusion:GridTextColumn MappingName="EmployeeAge" />
+                <Syncfusion:GridTextColumn MappingName="EmployeeGender" />
+            </Syncfusion:SfDataGrid.Columns>
+        </Syncfusion:SfDataGrid>
+    </Grid>
+</Window>

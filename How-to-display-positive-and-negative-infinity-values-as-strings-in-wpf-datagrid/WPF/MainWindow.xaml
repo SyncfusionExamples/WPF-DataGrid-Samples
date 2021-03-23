@@ -1,0 +1,33 @@
+﻿<Window x:Class="SfDataGridDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Syncfusion="http://schemas.syncfusion.com/wpf"
+        xmlns:local="clr-namespace:SfDataGridDemo"
+        xmlns:system="clr-namespace:System;assembly=mscorlib"
+        Title="SfDataGrid Demo"
+        Width="1024"
+        Height="600"
+        Icon="App.ico"
+        WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <local:ViewModel />
+    </Window.DataContext>
+    <Window.Resources />
+    <Grid x:Name="grid">
+
+        <Syncfusion:SfDataGrid  Name="datagrid"
+                               HorizontalAlignment="Left"
+                               VerticalAlignment="Top"
+                               AllowEditing="True"
+                               ColumnSizer="Star"
+                               GridValidationMode="InEdit"
+                               ItemsSource="{Binding Model}">            <Syncfusion:SfDataGrid.Columns>
+                <Syncfusion:GridTextColumn HeaderText="CustomerName" MappingName="customername" />
+                <Syncfusion:GridTextColumn HeaderText="CustomerId" MappingName="customerId" />
+                <Syncfusion:GridTextColumn HeaderText="Country" MappingName="Country" />
+                <Syncfusion:GridTextColumn HeaderText="Salary" MappingName="salary" />
+            </Syncfusion:SfDataGrid.Columns>
+        </Syncfusion:SfDataGrid>
+
+    </Grid>
+</Window>

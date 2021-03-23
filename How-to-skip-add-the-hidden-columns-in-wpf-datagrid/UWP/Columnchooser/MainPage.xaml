@@ -1,0 +1,51 @@
+﻿<Page x:Class="SfDataGridDemo.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:Grid="using:Syncfusion.UI.Xaml.Grid"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="using:SfDataGridDemo"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="200" />
+        </Grid.ColumnDefinitions>
+        <Grid:SfDataGrid x:Name="sfGrid"
+                         Grid.Column="0"
+                         Margin="10,0,30,30"
+                         AllowDraggingColumns="True"
+                         AutoGenerateColumns="False"
+                         ColumnSizer="Star"
+                         ItemsSource="{Binding OrdersListDetails}"
+                         NavigationMode="Row"
+                         ShowGroupDropArea="True">
+            <Grid:SfDataGrid.Columns>
+                <Grid:GridTextColumn HeaderText="Order ID" MappingName="OrderID" />
+                <Grid:GridTextColumn HeaderText="Customer ID"
+                                     IsHidden="True"
+                                     MappingName="CustomerID" />
+                <Grid:GridTextColumn HeaderText="Employee ID" MappingName="EmployeeID" />
+                <Grid:GridTextColumn HeaderText="Ship City"
+                                     IsHidden="True"
+                                     MappingName="ShipCity" />
+                <Grid:GridTextColumn HeaderText="Ship Country" MappingName="ShipCountry" />
+                <Grid:GridTextColumn HeaderText="Ship PostalCode" MappingName="ShipPostalCode" />
+            </Grid:SfDataGrid.Columns>
+        </Grid:SfDataGrid>
+        <StackPanel Grid.Column="1"
+                    Margin="5"
+                    Orientation="Vertical">
+
+            <TextBlock HorizontalAlignment="Center"
+                       VerticalAlignment="Center"
+                       FontSize="16"
+                       Text="ShowColumnChooser   " />
+            <ToggleSwitch Width="300"
+                          IsOn="{Binding ShowColumnChooser,
+                                         Mode=TwoWay}"
+                          local:ToggleEx.Command="{Binding TogglebuttonToggled}" />
+        </StackPanel>
+    </Grid>
+</Page>

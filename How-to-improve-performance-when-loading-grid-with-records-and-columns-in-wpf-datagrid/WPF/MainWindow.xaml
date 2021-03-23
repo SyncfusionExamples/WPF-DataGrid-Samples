@@ -1,0 +1,21 @@
+﻿<Window x:Class="SfDataGridDemo_sample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:SfDataGridDemo_sample"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        Title="SfDataGridDemo"        
+        Icon="App.ico"
+        WindowStartupLocation="CenterScreen">
+       <Window.DataContext>
+        <local:ViewModel />
+    </Window.DataContext>
+
+    <Grid>        
+        <syncfusion:SfDataGrid x:Name="grid" ItemsSource="{Binding OrderCollection}"
+                               EnableDataVirtualization="True"
+                               UseDrawing="Default"
+                               ColumnSizer="None"
+                               Grid.Column="0" >
+        </syncfusion:SfDataGrid>       
+    </Grid>
+</Window>
