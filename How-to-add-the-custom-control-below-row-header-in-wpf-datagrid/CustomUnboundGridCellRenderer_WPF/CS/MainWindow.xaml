@@ -1,0 +1,58 @@
+﻿<Window x:Class="UnBoundRowDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:interactivity="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:local="clr-namespace:UnBoundRowDemo"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        Icon="App.ico"
+        >
+
+    <Window.DataContext>
+        <local:SalesInfoViewModel />
+    </Window.DataContext>
+    <Window.Resources>
+        <local:SalesInfoViewModel x:Key="ViewModel" />    
+        <local:CurrencyConverter x:Key="CurrencyConverter" />
+    </Window.Resources>
+
+    <syncfusion:SfDataGrid x:Name="sfDataGrid"
+                           AllowEditing="True"
+                           AllowGrouping="True"
+                           AllowResizingColumns="True"
+                           AutoExpandGroups="True"
+                           AutoGenerateColumns="False"
+                           ItemsSource="{Binding YearlySalesDetails}"
+                           LiveDataUpdateMode="AllowSummaryUpdate"
+                           NavigationMode="Cell"
+                           SelectionMode="Single"
+                           ShowColumnWhenGrouped="True">
+        <syncfusion:SfDataGrid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="/Syncfusion.SfGrid.WPF;component/Styles/Styles.xaml" />
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+
+        </syncfusion:SfDataGrid.Resources>
+        <syncfusion:SfDataGrid.UnBoundRows>
+            <syncfusion:GridUnBoundRow Position="Top" ShowBelowSummary="True" />
+        </syncfusion:SfDataGrid.UnBoundRows>
+        <syncfusion:SfDataGrid.Columns>
+            <syncfusion:GridTextColumn Width="200" MappingName="Name" />
+            <syncfusion:GridTextColumn DisplayBinding="{Binding Path=QS1,
+                                                                StringFormat='{}{0:C}'}"
+                                       HeaderText="February"
+                                       TextAlignment="Right" />
+            <syncfusion:GridTextColumn DisplayBinding="{Binding Path=QS2,
+                                                                StringFormat='{}{0:C}'}" HeaderText="Salary"
+                                       MappingName="QS2"
+                                       TextAlignment="Right"/>
+
+
+            <syncfusion:GridTextColumn MappingName="Year" />
+
+        </syncfusion:SfDataGrid.Columns>
+    </syncfusion:SfDataGrid>
+
+
+</Window>

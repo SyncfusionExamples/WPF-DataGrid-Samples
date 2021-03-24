@@ -1,0 +1,25 @@
+﻿<Application
+    x:Class="SfDataGridDemo.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SfDataGridDemo"
+    xmlns:syncfusion="using:Syncfusion.UI.Xaml.Controls.Input"
+    RequestedTheme="Light">
+    <Application.Resources>
+        <DataTemplate x:Key="TextBoxTemplate">
+            <TextBox Text="{Binding Path=Value,Mode=TwoWay}"  />
+        </DataTemplate>
+
+        <DataTemplate x:Key="DoubleTemplate">
+            <syncfusion:SfNumericTextBox Width="160" Height="30" Value="{Binding Path=Value,Mode=TwoWay}"/>
+        </DataTemplate>
+        <DataTemplate x:Key="UpdownTemplate">
+            <syncfusion:SfNumericUpDown  Value="{Binding Path=Value,Mode=TwoWay}"/>
+        </DataTemplate>
+
+        <DataTemplate x:Key="TextBlockTemplate">
+            <TextBlock Text="{Binding Path=Value,Mode=TwoWay}" />
+        </DataTemplate>
+    </Application.Resources>
+
+</Application>

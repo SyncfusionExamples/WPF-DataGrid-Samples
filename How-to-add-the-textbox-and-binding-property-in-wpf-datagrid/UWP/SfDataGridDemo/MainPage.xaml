@@ -1,0 +1,118 @@
+﻿<Page
+    x:Class="SfDataGridDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SfDataGridDemo"
+    xmlns:Editors="using:Syncfusion.UI.Xaml.Controls.Input"
+    xmlns:syncfusion="using:Syncfusion.UI.Xaml.Grid"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.Resources>
+        <local:GroupSummaryConverter x:Key="converter"/>
+        <Style TargetType="syncfusion:GroupSummaryRowControl">
+            <Setter Property="FontWeight" Value="SemiBold" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="syncfusion:GroupSummaryRowControl">
+                        <Grid>
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="BorderStates">
+                                    <VisualState x:Name="NormalRow" />
+                                    <VisualState x:Name="FrozenRow">
+                                        <Storyboard BeginTime="0">
+                                            <ObjectAnimationUsingKeyFrames BeginTime="0"
+                                                                       Duration="1"
+                                                                       Storyboard.TargetName="PART_GroupSummaryRowBorder"
+                                                                       Storyboard.TargetProperty="BorderThickness">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="0, 0, 0, 1" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="FooterRow">
+                                        <Storyboard BeginTime="0">
+                                            <ObjectAnimationUsingKeyFrames BeginTime="0"
+                                                                       Duration="1"
+                                                                       Storyboard.TargetName="PART_GroupSummaryRowBorder"
+                                                                       Storyboard.TargetProperty="BorderThickness">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="0, 1, 0, 0" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames BeginTime="0"
+                                                                       Duration="1"
+                                                                       Storyboard.TargetName="PART_GroupSummaryRowBorder"
+                                                                       Storyboard.TargetProperty="Margin">
+                                                <DiscreteObjectKeyFrame KeyTime="0" Value="0, -1, 0, 0" />
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Border x:Name="PART_GroupSummaryRowBorder"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}" />
+                            <Rectangle x:Name="PART_CurrentFocusRow"
+                                   Margin="{TemplateBinding CurrentFocusBorderMargin}"
+                                   Stroke="DarkGray"
+                                   StrokeDashArray="3,3"
+                                   StrokeThickness="1"
+                                   Visibility="{TemplateBinding CurrentFocusRowVisibility}" />
+                            <Border x:Name="PART_RowSelectionBorder"
+                                Background="{TemplateBinding GroupRowSelectionBrush}"
+                                Visibility="{TemplateBinding SelectionBorderVisiblity}" />
+                            <Border Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}"
+                                Padding="{TemplateBinding Padding}">
+                                <Grid>
+                                    <Editors:SfTextBoxExt Watermark="+Add Remarks" Text="{Binding Converter={StaticResource converter}}" Padding="15,0,0,0" BorderThickness="0.5" />
+                                </Grid>
+                            </Border>
+                        </Grid>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+    
+    <Page.DataContext>
+        <local:ViewModel />
+    </Page.DataContext>
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+        <syncfusion:SfDataGrid x:Name="dataGrid"
+                               AllowEditing="True"
+                               AllowFiltering="True"
+                               AllowGrouping="True"
+                               AllowDeleting="True"
+                               AllowSorting="True" 
+                               AutoGenerateColumns="False"                              
+                               ColumnSizer="Star"
+                               ItemsSource="{Binding Emp}"
+                               ShowGroupDropArea="True">
+
+            <syncfusion:SfDataGrid.Columns>
+                <syncfusion:GridNumericColumn HeaderText="Employee ID" MappingName="EmployeeID"/>
+                <syncfusion:GridTextColumn HeaderText="Employee Name" MappingName="Name"/>
+                <syncfusion:GridDateTimeColumn HeaderText="Birth Date" TextAlignment="Right" MappingName="BirthDate"/>
+                <syncfusion:GridTextColumn HeaderText="Gender" MappingName="Gender"/>
+                <syncfusion:GridTextColumn HeaderText="Income" TextAlignment="Right" 
+                                           MappingName="Salary" 
+                                           DisplayBinding="{Binding Salary}"/>
+                <syncfusion:GridNumericColumn MappingName="SickLeaveHours" HeaderText="Sick Leave Hours" />
+            </syncfusion:SfDataGrid.Columns>
+
+            <syncfusion:SfDataGrid.GroupSummaryRows>
+                <syncfusion:GridSummaryRow ShowSummaryInRow="False">
+                    <syncfusion:GridSummaryRow.SummaryColumns>
+                        <syncfusion:GridSummaryColumn Name="EmployeeID"
+                                              Format="'{Count:d}'"
+                                              MappingName="EmployeeID"
+                                              SummaryType="CountAggregate" />
+                    </syncfusion:GridSummaryRow.SummaryColumns>
+                </syncfusion:GridSummaryRow>
+            </syncfusion:SfDataGrid.GroupSummaryRows>
+
+        </syncfusion:SfDataGrid>
+    </Grid>
+</Page>

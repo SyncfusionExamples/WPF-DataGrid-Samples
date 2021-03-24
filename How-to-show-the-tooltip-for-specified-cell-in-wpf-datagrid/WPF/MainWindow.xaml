@@ -1,0 +1,45 @@
+﻿<Window x:Class="SfDataGridDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:SfDataGridDemo"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        xmlns:interactivity="http://schemas.microsoft.com/expression/2010/interactivity"
+        Title="SfDataGrid Demo"
+        Width="1024"
+        Height="710"
+        Icon="App.ico"
+        WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <local:ViewModel />
+    </Window.DataContext>
+    
+    <Grid>
+        <syncfusion:SfDataGrid x:Name="grid"
+                               AllowEditing="True"
+                               AllowFiltering="True"
+                               AllowGrouping="True"
+                               AllowDeleting="True"
+                               AllowSorting="True" 
+                               AutoGenerateColumns="False"                              
+                               ColumnSizer="Star"
+                               ItemsSource="{Binding Emp}"
+                               ShowGroupDropArea="True">
+            <interactivity:Interaction.Behaviors>
+                <local:SfDataGridBehavior/>
+            </interactivity:Interaction.Behaviors>
+
+            <syncfusion:SfDataGrid.Columns>
+                <syncfusion:GridTextColumn HeaderText="Employee ID" MappingName="EmployeeID"/>
+                <syncfusion:GridTextColumn HeaderText="Employee Name" MappingName="EmployeeName"/>
+                <syncfusion:GridDateTimeColumn HeaderText="Birth Date" TextAlignment="Right" MappingName="BirthDate"/>
+                <syncfusion:GridTextColumn HeaderText="Gender" MappingName="Gender"/>
+                <syncfusion:GridTextColumn HeaderText="Income" TextAlignment="Right" 
+                                        MappingName="Salary" 
+                                        DisplayBinding="{Binding Salary,StringFormat={}{0:c}}"/>
+                <syncfusion:GridTextColumn MappingName="SickLeaveHours" />
+            </syncfusion:SfDataGrid.Columns>
+
+        </syncfusion:SfDataGrid>
+
+    </Grid>
+</Window>

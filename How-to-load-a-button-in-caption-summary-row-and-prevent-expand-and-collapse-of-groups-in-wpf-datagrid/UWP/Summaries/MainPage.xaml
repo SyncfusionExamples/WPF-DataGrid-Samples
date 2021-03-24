@@ -1,0 +1,86 @@
+﻿<Page
+    x:Class="SfDataGridDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:SfDataGridDemo"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:syncfusion="using:Syncfusion.UI.Xaml.Grid"
+    mc:Ignorable="d">
+    <Page.DataContext>
+        <local:ViewModel />
+    </Page.DataContext>
+    <Page.Resources>
+        <local:ViewModel x:Key="viewmodel" />
+
+        <Style TargetType="syncfusion:GridCaptionSummaryCell">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Gray" />
+            <Setter Property="BorderThickness" Value="0,0,0,1" />
+            <Setter Property="Padding" Value="3,0,3,0" />
+            <Setter Property="IsTabStop" Value="False" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="syncfusion:GridCaptionSummaryCell">
+                        <Border
+                            x:Name="PART_GridCaptionSummaryCellBorder"
+                            Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}">
+
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="60" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <ContentPresenter
+                                    Grid.Column="1"
+                                    Margin="{TemplateBinding Padding}"
+                                    HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                                <StackPanel Grid.Column="0">
+                                    <Button
+                                        Width="50"
+                                        Height="50"
+                                        Content="Click" />
+                                </StackPanel>
+                            </Grid>
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Page.Resources>
+    <Grid x:Name="maingrid">
+        <syncfusion:SfDataGrid
+            x:Name="datagrid"
+            Grid.Row="0"
+            AllowEditing="True"
+            AllowGrouping="True"
+            AllowResizingColumns="True"
+            AllowSorting="True"
+            AutoGenerateColumns="False"
+            ColumnSizer="Auto"
+            ItemsSource="{Binding Employees}"
+            LiveDataUpdateMode="AllowDataShaping"
+            SelectionMode="Single"
+            SelectionUnit="Row"
+            ShowGroupDropArea="True"
+            ShowRowHeader="True">
+
+            <syncfusion:SfDataGrid.GroupColumnDescriptions>
+                <syncfusion:GroupColumnDescription ColumnName="EmployeeName" />
+            </syncfusion:SfDataGrid.GroupColumnDescriptions>
+            <syncfusion:SfDataGrid.Columns>
+                <syncfusion:GridTextColumn HeaderText="Employee Name" MappingName="EmployeeName" />
+                <syncfusion:GridTextColumn HeaderText="Employee Area" MappingName="EmployeeArea" />
+                <syncfusion:GridTextColumn HeaderText="Employee Gender" MappingName="EmployeeGender" />
+                <syncfusion:GridTextColumn HeaderText="Date of Join" MappingName="JoiningDate" />
+                <syncfusion:GridTextColumn HeaderText="Contact Number" MappingName="ContactNumber" />
+                <syncfusion:GridTextColumn HeaderText="Employee Salary" MappingName="EmployeeSalary" />
+            </syncfusion:SfDataGrid.Columns>
+        </syncfusion:SfDataGrid>
+
+    </Grid>
+</Page>

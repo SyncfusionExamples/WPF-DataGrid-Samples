@@ -1,0 +1,60 @@
+﻿<Window x:Class="SearchPanel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:SearchPanel"
+        xmlns:interactivity="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        Title="Incremental Search" Icon="App.ico">
+    
+    <Window.DataContext>
+        <local:ViewModel />
+    </Window.DataContext>
+    
+    <Window.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../SearchControl/Themes/Generic.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="50" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid x:Name="Seperator">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <syncfusion:SfDataGrid x:Name="dataGrid" Grid.Column="0"
+                                AutoGenerateColumns="False" ColumnSizer="Star"
+                                ItemsSource="{Binding Path=OrdersDetails}"
+                                NavigationMode="Cell" >
+                <syncfusion:SfDataGrid.Columns>
+                    <syncfusion:GridTextColumn MappingName="OrderID" />
+                    <syncfusion:GridTextColumn MappingName="CustomerID" />
+                    <syncfusion:GridTextColumn HeaderText="Ship City" MappingName="ShipCity" />
+                    <syncfusion:GridTextColumn HeaderText="Ship Country" MappingName="ShipCountry" />
+                    <syncfusion:GridTextColumn MappingName="Freight" TextAlignment="Right"/>
+                </syncfusion:SfDataGrid.Columns>
+            </syncfusion:SfDataGrid>
+
+            <local:SearchControl x:Name="searchControl" Grid.Column="2"
+                                Visibility="Hidden"
+                                VerticalAlignment="Top" 
+                                DataGrid="{Binding ElementName=dataGrid}"
+                                HorizontalAlignment="Right"/>
+        </Grid>
+    </Grid>
+
+    <interactivity:Interaction.Behaviors>
+        <local:Behaviour/>
+    </interactivity:Interaction.Behaviors>
+    
+</Window>

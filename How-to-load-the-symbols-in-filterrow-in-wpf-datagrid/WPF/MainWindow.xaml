@@ -1,0 +1,34 @@
+﻿<Window x:Class="Performance_SfDataGrid.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"       
+        xmlns:local="clr-namespace:Performance_SfDataGrid"
+        Title="Increase performance by using Batch Update" Icon="App.ico"
+        Height="710" Width="1024" WindowStartupLocation="CenterScreen">
+
+    <Window.DataContext>
+        <local:ViewModel />
+    </Window.DataContext>
+      
+    <Grid>
+        <Grid.RowDefinitions>
+
+            <RowDefinition Height="50"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <WrapPanel Grid.Row="0">
+            <StackPanel Width="50" />
+            <TextBox x:Name="TextBox" Height="30" Width="100" />
+            <StackPanel Width="10" />
+        </WrapPanel>
+
+        <syncfusion:SfDataGrid x:Name="dataGrid" Grid.Row="1"
+                               AutoGenerateColumns="True" 
+                               AllowFiltering="True" 
+                               AllowResizingColumns="True" 
+                               EnableDataVirtualization="True"
+                               ShowBusyIndicator="True"
+                               AllowEditing="True"              
+                               ItemsSource="{Binding Path=ItemSource}"/>
+    </Grid>
+</Window>

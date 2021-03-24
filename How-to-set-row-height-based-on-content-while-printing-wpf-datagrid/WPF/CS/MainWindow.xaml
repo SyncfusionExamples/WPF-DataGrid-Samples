@@ -1,0 +1,54 @@
+﻿<Window
+    x:Class="PrintingDemo.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:PrintingDemo.ViewModel"
+    xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+    Title="Printing Demo"
+    syncfusion:LayoutControl.SetMetroMode="True"
+    Icon="App.ico">
+    <Window.DataContext>
+        <local:ViewModel />
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="100" />
+        </Grid.ColumnDefinitions>
+        <syncfusion:SfDataGrid
+            Name="datagrid"
+            Grid.Column="0"
+            AddNewRowPosition="Top"
+            AllowDraggingColumns="True"
+            AllowEditing="True"
+            AllowGrouping="True"
+            AutoGenerateColumns="False"
+            GridCopyOption="CopyData"
+            GridPasteOption="PasteData"
+            ItemsSource="{Binding Orders}"
+            ShowGroupDropArea="True">
+            <syncfusion:SfDataGrid.Columns>
+                <syncfusion:GridTextColumn
+                    HeaderText="order "
+                    MappingName="OrderID"
+                    TextWrapping="Wrap" />
+                <syncfusion:GridTextColumn MappingName="CustomerID" TextWrapping="Wrap" />
+                <syncfusion:GridTextColumn MappingName="CustomerName" TextWrapping="Wrap" />
+                <syncfusion:GridTextColumn MappingName="Country" TextWrapping="Wrap" />
+                <syncfusion:GridTextColumn MappingName="ShipCity" TextWrapping="Wrap" />
+            </syncfusion:SfDataGrid.Columns>
+        </syncfusion:SfDataGrid>
+        <StackPanel>
+            <Button
+                x:Name="PrintData"
+                Width="70"
+                Height="50"
+                Margin="700,20,0,0"
+                Command="{Binding Path=Print}"
+                CommandParameter="{Binding ElementName=datagrid}"
+                Content="Prints" />
+        </StackPanel>
+    </Grid>
+</Window>
+
+

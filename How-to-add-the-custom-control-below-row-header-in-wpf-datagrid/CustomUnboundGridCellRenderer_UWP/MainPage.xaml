@@ -1,0 +1,46 @@
+﻿<Page
+    x:Class="SfDataGridDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SfDataGridDemo"
+    xmlns:syncfusion="using:Syncfusion.UI.Xaml.Grid"
+   xmlns:controls="using:MyToolkit.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.DataContext>
+        <local:ViewModel/>
+    </Page.DataContext>
+    <Page.Resources>
+        <local:ViewModel x:Key="viewModel"/>
+        <local:CurrencyConverter x:Key="currencyConvertor"/>
+    </Page.Resources>
+    <Grid>
+        <syncfusion:SfDataGrid x:Name="sfDataGrid" 
+                               AllowEditing="True"
+                               AllowFiltering="True"
+                               AllowGrouping="True"            
+                               AllowSorting="True"
+                               AllowDeleting="True"
+                               ShowRowHeader="True"
+                               AutoGenerateColumns="False"
+                               EditTrigger="OnTap"
+                               ColumnSizer="None"
+                               ItemsSource="{Binding Emp}"
+                               ShowGroupDropArea="True">
+            <syncfusion:SfDataGrid.Columns>
+                <syncfusion:GridNumericColumn MappingName="EmployeeID"/>
+                <syncfusion:GridTextColumn MappingName="Name"/>
+                <syncfusion:GridDateTimeColumn MappingName="BirthDate"/>
+                <syncfusion:GridTextColumn MappingName="BirthDate"/>
+                <syncfusion:GridNumericColumn MappingName="Salary" FormatString="c" />
+                <syncfusion:GridTextColumn MappingName="SickLeaveHours"/>
+            </syncfusion:SfDataGrid.Columns>
+            <syncfusion:SfDataGrid.UnBoundRows>
+                <syncfusion:GridUnBoundRow Position="Top" ShowBelowSummary="True" />
+            </syncfusion:SfDataGrid.UnBoundRows>
+        </syncfusion:SfDataGrid>
+    </Grid>
+
+
+</Page>
