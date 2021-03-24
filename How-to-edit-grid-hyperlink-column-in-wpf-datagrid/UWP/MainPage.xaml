@@ -1,0 +1,35 @@
+﻿<Page x:Class="SfDataGridDemo.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="using:SfDataGridDemo"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:syncfusion="using:Syncfusion.UI.Xaml.Grid"
+      mc:Ignorable="d">
+
+    <Page.DataContext>
+        <local:ViewModel/>
+    </Page.DataContext>
+    <Grid>
+        <syncfusion:SfDataGrid ItemsSource="{Binding EmployeeDetails}" AllowResizingColumns="True" AutoGenerateColumns="False">
+            <syncfusion:SfDataGrid.Columns>
+                <syncfusion:GridNumericColumn MappingName="EmployeeAge"/>
+                <syncfusion:GridTextColumn MappingName="EmployeeGender"/>
+                <syncfusion:GridTextColumn  AllowEditing="True" Width="150"  MappingName="Country">
+                    <syncfusion:GridTextColumn.CellTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="" Height="20" Width="40">                         
+                             <Hyperlink NavigateUri="{Binding HyperLink}" Click="Hyperlink_Click">
+                                   <Hyperlink.Inlines>
+                                       <Run Text="{Binding Country}"></Run>
+                                   </Hyperlink.Inlines>
+                             </Hyperlink>
+                            </TextBlock>
+                        </DataTemplate>
+                    </syncfusion:GridTextColumn.CellTemplate>
+                </syncfusion:GridTextColumn>
+                <syncfusion:GridNumericColumn MappingName="EmployeeSalary"/>
+            </syncfusion:SfDataGrid.Columns>
+        </syncfusion:SfDataGrid>
+    </Grid>
+</Page>

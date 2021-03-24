@@ -1,0 +1,33 @@
+﻿<Window x:Class="SfDataGrid_CopyPaste.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:SfDataGrid_CopyPaste"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        Title="SfDataGrid CopyPaste Demo"
+        Width="1024"
+        Height="710"
+        Icon="App.ico"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.DataContext>
+        <local:ViewModel />
+    </Window.DataContext>
+
+    <Grid>
+        <syncfusion:SfDataGrid x:Name="sfdatagrid"
+                               AllowEditing="True"
+                               AutoGenerateColumns="False"
+                               ItemsSource="{Binding Products}"
+                               NavigationMode="Cell"
+                               SelectionMode="Multiple"
+                               SelectionUnit="Cell">
+            <syncfusion:SfDataGrid.Columns>
+                <syncfusion:GridTextColumn MappingName="ProductId" />
+                <syncfusion:GridTextColumn MappingName="ProductName" />
+                <syncfusion:GridTextColumn MappingName="CountryName" />
+                <syncfusion:GridTextColumn MappingName="ShipCity" />
+            </syncfusion:SfDataGrid.Columns>
+        </syncfusion:SfDataGrid>
+
+    </Grid>
+</Window>

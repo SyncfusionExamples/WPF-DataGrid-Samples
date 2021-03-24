@@ -1,0 +1,62 @@
+﻿<Page
+    x:Class="TableSummary_CellStyle.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TableSummary_CellStyle"
+    xmlns:syncfusion="using:Syncfusion.UI.Xaml.Grid"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <local:ViewModel />
+    </Page.DataContext>
+    <Page.Resources>       
+        <local:TableSummaryStyleSelector x:Key="style"/>
+    </Page.Resources>
+    <Grid>
+        <syncfusion:SfDataGrid x:Name="sfdatagrid"  
+                               AllowDraggingColumns="True"
+                               SelectionMode="Extended"
+                               ShowGroupDropArea="True"
+                               AllowEditing="True" 
+                               AutoGenerateColumns="False"                                
+                               TableSummaryCellStyleSelector="{StaticResource style}"
+                               AllowFiltering="True"  
+                               AllowDeleting="True" 
+                               LiveDataUpdateMode="AllowSummaryUpdate"
+                               ItemsSource="{Binding Path=Products}" >
+            <syncfusion:SfDataGrid.Columns>
+                <syncfusion:GridTextColumn MappingName="ProductName"  />
+                <syncfusion:GridTextColumn MappingName="SalesID"/>
+                <syncfusion:GridTextColumn MappingName="CustomerName"/>
+                <syncfusion:GridTextColumn MappingName="CustomerId" />
+                <syncfusion:GridTextColumn MappingName="CustomerBranch" />
+                <syncfusion:GridTextColumn MappingName="ID"/>
+                <syncfusion:GridTextColumn MappingName="ShipmentDetails" />
+                <syncfusion:GridTextColumn MappingName="ShipmentPlace" />
+            </syncfusion:SfDataGrid.Columns>
+
+            <syncfusion:SfDataGrid.TableSummaryRows>
+                <syncfusion:GridTableSummaryRow Position="Top" ShowSummaryInRow="False">
+                    <syncfusion:GridTableSummaryRow.SummaryColumns>
+                        <syncfusion:GridSummaryColumn Name="SalesID"
+                                                          Format="'{Sum:c}'"
+                                                          MappingName="SalesID"
+                                                          SummaryType="Int32Aggregate" />
+
+                        <syncfusion:GridSummaryColumn Name="NameCount"
+                                                          Format="'{Count:d}'"
+                                                          MappingName="CustomerName"
+                                                          SummaryType="Int32Aggregate" />
+
+                        <syncfusion:GridSummaryColumn Name="CountAverage"
+                                                          Format="'{Average}'"
+                                                          MappingName="ID"
+                                                          SummaryType="Int32Aggregate" />
+                    </syncfusion:GridTableSummaryRow.SummaryColumns>
+                </syncfusion:GridTableSummaryRow>
+            </syncfusion:SfDataGrid.TableSummaryRows>
+        </syncfusion:SfDataGrid>
+    </Grid>
+</Page>

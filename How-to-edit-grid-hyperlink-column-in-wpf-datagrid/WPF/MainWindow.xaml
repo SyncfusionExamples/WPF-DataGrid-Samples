@@ -1,0 +1,38 @@
+﻿<Window x:Class="SfDataGridDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:interactivity="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:local="clr-namespace:SfDataGridDemo"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        Title="SfDataGrid Demo"
+        Width="1024"
+        Height="710"
+        Icon="App.ico"
+        WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <local:ViewModel />
+    </Window.DataContext>
+    <Grid>
+        <syncfusion:SfDataGrid AutoGenerateColumns="False"
+                               EditTrigger="OnDoubleTap"
+                               ItemsSource="{Binding EmployeeDetails}">
+            <syncfusion:SfDataGrid.Columns>
+                <syncfusion:GridNumericColumn MappingName="EmployeeAge" />
+                <syncfusion:GridTextColumn MappingName="EmployeeName" />
+                <syncfusion:GridTextColumn MappingName="EmployeeGender" />
+                <syncfusion:GridTextColumn AllowEditing="True" MappingName="Country">
+                    <syncfusion:GridTextColumn.CellTemplate>
+                        <DataTemplate>
+                            <ContentControl>
+                                <Hyperlink NavigateUri="{Binding HyperLink}" RequestNavigate="Hyperlink_RequestNavigate">
+                                    <TextBlock Text="{Binding Country}" />
+                                </Hyperlink>
+                            </ContentControl>
+                        </DataTemplate>
+                    </syncfusion:GridTextColumn.CellTemplate>
+                </syncfusion:GridTextColumn>
+                <syncfusion:GridNumericColumn MappingName="EmployeeSalary" />
+            </syncfusion:SfDataGrid.Columns>
+        </syncfusion:SfDataGrid>
+    </Grid>
+</Window>

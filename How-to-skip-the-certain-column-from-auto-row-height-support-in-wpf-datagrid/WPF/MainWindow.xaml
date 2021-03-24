@@ -1,0 +1,48 @@
+﻿<Window x:Class="RowHeight.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:RowHeight"
+        xmlns:Syncfusion="http://schemas.syncfusion.com/wpf"
+        xmlns:interactivity="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.DataContext>
+        <local:ViewModel/>
+    </Window.DataContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Syncfusion:SfDataGrid x:Name="datagrid" 
+                               Grid.Row="1"
+                               AllowEditing="True" 
+                               AllowGrouping="True"
+                               ShowGroupDropArea="True"                                
+                               AllowDraggingColumns="True"
+                               ItemsSource="{Binding GDCSource}"
+                               AllowSorting="True">
+            <interactivity:Interaction.Behaviors>
+                <local:QueryRowHeightBehaviour>
+                    <local:QueryRowHeightBehaviour.ExlucedColumnsList>
+                        <local:ExlucedColumnsList>
+                            <sys:String>EmployeeName</sys:String>
+                            <sys:String>EmployeeAge</sys:String>
+                        </local:ExlucedColumnsList>
+                    </local:QueryRowHeightBehaviour.ExlucedColumnsList>
+                </local:QueryRowHeightBehaviour>
+            </interactivity:Interaction.Behaviors>
+            <Syncfusion:SfDataGrid.Columns>
+                <Syncfusion:GridTextColumn MappingName="EmployeeName"  TextWrapping="Wrap" AllowFiltering="True"/>
+                <Syncfusion:GridTextColumn MappingName="EmployeeAge"  TextWrapping="Wrap" AllowFiltering="True"/>
+                <Syncfusion:GridTextColumn MappingName="EmployeeArea"  TextWrapping="Wrap" AllowFiltering="True"/>
+                <Syncfusion:GridTextColumn MappingName="EmployeeGender"  TextWrapping="Wrap" AllowFiltering="True"/>
+            </Syncfusion:SfDataGrid.Columns>
+        </Syncfusion:SfDataGrid>
+    </Grid>
+</Window>

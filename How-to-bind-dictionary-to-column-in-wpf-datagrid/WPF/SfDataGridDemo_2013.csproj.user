@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <ReferencePath>C:\Program Files (x86)\Syncfusion\Essential Studio\14.1.0.41\precompiledassemblies\14.1.0.41\4.5.1\</ReferencePath>
+  </PropertyGroup>
+</Project>

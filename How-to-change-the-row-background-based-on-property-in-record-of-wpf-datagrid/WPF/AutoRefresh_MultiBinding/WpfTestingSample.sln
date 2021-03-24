@@ -1,0 +1,40 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTestingSample", "WpfTestingSample\WpfTestingSample.csproj", "{8BE92BFB-B59B-4748-88D1-33AA60F599EE}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|Mixed Platforms = Debug|Mixed Platforms
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|Mixed Platforms = Release|Mixed Platforms
+		Release|x86 = Release|x86
+		Release-XML|Any CPU = Release-XML|Any CPU
+		Release-XML|Mixed Platforms = Release-XML|Mixed Platforms
+		Release-XML|x86 = Release-XML|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8BE92BFB-B59B-4748-88D1-33AA60F599EE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8BE92BFB-B59B-4748-88D1-33AA60F599EE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8BE92BFB-B59B-4748-88D1-33AA60F599EE}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{8BE92BFB-B59B-4748-88D1-33AA60F599EE}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{8BE92BFB-B59B-4748-88D1-33AA60F599EE}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8BE92BFB-B59B-4748-88D1-33AA60F599EE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8BE92BFB-B59B-4748-88D1-33AA60F599EE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8BE92BFB-B59B-4748-88D1-33AA60F599EE}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{8BE92BFB-B59B-4748-88D1-33AA60F599EE}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{8BE92BFB-B59B-4748-88D1-33AA60F599EE}.Release|x86.ActiveCfg = Release|Any CPU
+		{8BE92BFB-B59B-4748-88D1-33AA60F599EE}.Release-XML|Any CPU.ActiveCfg = Release|Any CPU
+		{8BE92BFB-B59B-4748-88D1-33AA60F599EE}.Release-XML|Any CPU.Build.0 = Release|Any CPU
+		{8BE92BFB-B59B-4748-88D1-33AA60F599EE}.Release-XML|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{8BE92BFB-B59B-4748-88D1-33AA60F599EE}.Release-XML|Mixed Platforms.Build.0 = Release|Any CPU
+		{8BE92BFB-B59B-4748-88D1-33AA60F599EE}.Release-XML|x86.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,47 @@
+﻿<Page
+    x:Class="CaptionSummaryCustomization.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:CaptionSummaryCustomization"
+    xmlns:Syncfusion="using:Syncfusion.UI.Xaml.Grid"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"    
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <local:ViewModel/>
+    </Page.DataContext>
+
+    <Grid x:Name="maingrid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Syncfusion:SfDataGrid x:Name="datagrid"  Grid.Row="1"
+                               ColumnSizer="Auto"
+                               AutoGenerateColumns="False"
+                               AllowResizingColumns="True" 
+                               AllowEditing="True"                                
+                               AllowSorting="True"   
+                               ItemsSource="{Binding Employees}"
+                               AllowGrouping="True" 
+                               ShowGroupDropArea="True" 
+                               SelectionMode="Single" 
+                               ShowRowHeader="True" 
+                               LiveDataUpdateMode="AllowDataShaping"
+                               SelectionUnit="Row">
+            <Syncfusion:SfDataGrid.GroupColumnDescriptions>
+                <Syncfusion:GroupColumnDescription ColumnName="EmployeeSalary"/>
+            </Syncfusion:SfDataGrid.GroupColumnDescriptions>
+
+            <Syncfusion:SfDataGrid.Columns>
+                <Syncfusion:GridTextColumn HeaderText="Employee Name" MappingName="EmployeeName" />
+                <Syncfusion:GridTextColumn HeaderText="Employee Area" MappingName="EmployeeArea"/>
+                <Syncfusion:GridTextColumn HeaderText="Employee Gender" MappingName="EmployeeGender"/>
+                <Syncfusion:GridTextColumn HeaderText="Date of Join" MappingName="JoiningDate"/>
+                <Syncfusion:GridNumericColumn HeaderText="Contact Number" MappingName="ContactNumber" />
+                <Syncfusion:GridNumericColumn HeaderText="EmployeeSalary" MappingName="EmployeeSalary" />
+            </Syncfusion:SfDataGrid.Columns>
+        </Syncfusion:SfDataGrid>
+    </Grid>
+</Page>

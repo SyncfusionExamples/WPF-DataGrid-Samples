@@ -1,0 +1,25 @@
+﻿<Window x:Class="SfDataGridDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:interactivity="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:local="clr-namespace:SfDataGridDemo"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        Title="SfDataGrid Demo"
+        Width="1024"
+        Height="710"
+        Icon="App.ico"
+        WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <local:ViewModel />
+    </Window.DataContext>
+    <Grid>
+        <syncfusion:SfDataGrid x:Name="sfdatagrid"
+                               AddNewRowPosition="Top"
+                               AllowEditing="True"
+                               AutoGenerateColumns="True"
+                               GridCopyOption="CopyData"
+                               ItemsSource="{Binding EmployeeDetails}"
+                               SelectionMode="Extended"
+                               SelectionUnit="Row" />
+    </Grid>
+</Window>

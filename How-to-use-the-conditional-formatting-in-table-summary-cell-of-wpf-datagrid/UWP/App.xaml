@@ -1,0 +1,16 @@
+﻿<Application
+    x:Class="TableSummary_CellStyle.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:syncfusion="using:Syncfusion.UI.Xaml.Grid"
+    xmlns:local="using:TableSummary_CellStyle"
+    RequestedTheme="Light">
+    <Application.Resources>
+        <Style x:Key="TableSummaryStyle1" TargetType="syncfusion:GridTableSummaryCell">
+            <Setter Property="Foreground" Value="Blue"/>
+        </Style>
+        <Style x:Key="TableSummaryStyle2" TargetType="syncfusion:GridTableSummaryCell">
+            <Setter Property="Foreground" Value="Red"/>
+        </Style>
+    </Application.Resources>
+</Application>

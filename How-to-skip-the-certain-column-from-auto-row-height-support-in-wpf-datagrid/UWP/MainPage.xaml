@@ -1,0 +1,36 @@
+﻿<Page
+    x:Class="Rowheight.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Rowheight"
+    xmlns:Syncfusion="using:Syncfusion.UI.Xaml.Grid"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Page.DataContext>
+        <local:ViewModel/>
+    </Page.DataContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Syncfusion:SfDataGrid x:Name="datagrid" 
+                               Grid.Row="1"
+                               AllowEditing="True" 
+                               AllowGrouping="True"
+                               ShowGroupDropArea="True"                                
+                               AllowDraggingColumns="True"
+                               ItemsSource="{Binding GDCSource}"
+                               AllowSorting="True">
+            <Syncfusion:SfDataGrid.Columns>
+                <Syncfusion:GridTextColumn MappingName="EmployeeName"  TextWrapping="Wrap" AllowFiltering="True"/>
+                <Syncfusion:GridTextColumn MappingName="EmployeeAge"  TextWrapping="Wrap" AllowFiltering="True"/>
+                <Syncfusion:GridTextColumn MappingName="EmployeeArea"  TextWrapping="Wrap" AllowFiltering="True"/>
+                <Syncfusion:GridTextColumn MappingName="EmployeeGender"  TextWrapping="Wrap" AllowFiltering="True"/>
+            </Syncfusion:SfDataGrid.Columns>
+        </Syncfusion:SfDataGrid>
+    </Grid>
+</Page>

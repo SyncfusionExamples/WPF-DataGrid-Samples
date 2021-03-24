@@ -1,0 +1,34 @@
+﻿<Window x:Class="SfDataGridDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:SfDataGridDemo"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        Title="SfDataGrid Demo"
+        Width="1024"
+        Height="710"
+        Icon="App.ico"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <local:BindingProxy x:Key="proxy" Data="{Binding}" />
+    </Window.Resources>
+
+    <Grid>
+        <syncfusion:SfDataGrid x:Name="DataGrid"
+                               AutoGenerateColumns="False"
+                               ItemsSource="{Binding Orderlist}"
+                               NavigationMode="Cell">
+            <syncfusion:SfDataGrid.Columns>
+                <syncfusion:GridTextColumn MappingName="Name" />
+                <syncfusion:GridTextColumn MappingName="City" />
+                <syncfusion:GridTextColumn MappingName="Country" />
+                <syncfusion:GridComboBoxColumn AllowEditing="True"
+                                               DisplayBinding="{Binding Path=SelectedName}"
+                                               DisplayMemberPath="Name"
+                                               HeaderText="ComboBox-Column"
+                                               ItemsSource="{Binding Data.StringName,
+                                                                     Source={StaticResource proxy}}" />
+            </syncfusion:SfDataGrid.Columns>
+        </syncfusion:SfDataGrid>
+    </Grid>
+</Window>

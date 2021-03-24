@@ -1,0 +1,45 @@
+﻿<Window x:Class="SfDataGridDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:interactivity="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:local="clr-namespace:SfDataGridDemo"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        Title="SfDataGrid Demo"
+        Width="1024"
+        Height="710"
+        Icon="App.ico"
+        WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <local:ViewModel />
+    </Window.DataContext>
+    <Grid x:Name="grid">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        
+            <syncfusion:SfDataGrid Name="grid2" AutoGenerateColumns="True"
+                               EditTrigger="OnDoubleTap"
+                               ItemsSource="{Binding EmployeeDetails}">
+            <!--<syncfusion:SfDataGrid.Columns>
+                <syncfusion:GridTextColumn MappingName="Contact Name"/>
+                <syncfusion:GridTextColumn MappingName="Company Name"/>                                                              
+                <syncfusion:GridTextColumn MappingName="Country"/>
+            </syncfusion:SfDataGrid.Columns>-->
+        </syncfusion:SfDataGrid>
+            <StackPanel Grid.Column="1">
+                <Button x:Name="GenerateReport" Content="Generate Report" Click="GenerateReport_Click"/>
+            </StackPanel>
+        <syncfusion:SfDataGrid Name="grid1" AutoGenerateColumns="True"
+                               EditTrigger="OnDoubleTap" Grid.Column="2"
+                               ItemsSource="{Binding EmployeeDetails1}">
+            <!--<syncfusion:SfDataGrid.Columns>
+                <syncfusion:GridTextColumn MappingName="FirstName"/>
+                <syncfusion:GridTextColumn MappingName="LastName"/>                                                      
+                <syncfusion:GridTextColumn MappingName="Country"/>
+            </syncfusion:SfDataGrid.Columns>-->
+        </syncfusion:SfDataGrid>
+       
+    </Grid>
+</Window>
