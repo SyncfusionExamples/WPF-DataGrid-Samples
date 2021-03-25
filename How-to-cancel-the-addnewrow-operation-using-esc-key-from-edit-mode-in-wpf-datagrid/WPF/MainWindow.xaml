@@ -1,0 +1,33 @@
+﻿<Window x:Class="SfDataGridDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Syncfusion="http://schemas.syncfusion.com/wpf"
+        xmlns:local="clr-namespace:SfDataGridDemo"
+        Title="SfdataGrid Demo"
+        Width="1024"
+        Height="710"
+        Icon="App.ico"
+        WindowStartupLocation="CenterScreen">
+
+    <Window.DataContext>
+        <local:ViewModel />
+    </Window.DataContext>
+
+    <Grid>
+        <Syncfusion:SfDataGrid Name="sfdatagrid"
+                               AddNewRowPosition="Top"
+                               AllowEditing="True"
+                               AllowGrouping="True"
+                               AutoGenerateColumns="True"
+                               ColumnSizer="Star"
+                               ItemsSource="{Binding EmployeeDetails}"
+                               ShowGroupDropArea="True">
+            <Syncfusion:SfDataGrid.Columns>
+                <Syncfusion:GridTextColumn HeaderText="Employee ID" MappingName="EmployeeID" />
+                <Syncfusion:GridTextColumn HeaderText="Employee Name" MappingName="EmployeeName" />
+                <Syncfusion:GridTextColumn HeaderText="Employee Age" MappingName="EmployeeAge" />
+                <Syncfusion:GridCurrencyColumn HeaderText="Employee Salary" MappingName="EmployeeSalary" />
+            </Syncfusion:SfDataGrid.Columns>
+        </Syncfusion:SfDataGrid>
+    </Grid>
+</Window>

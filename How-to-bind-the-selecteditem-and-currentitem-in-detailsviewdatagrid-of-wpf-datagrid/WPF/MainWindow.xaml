@@ -1,0 +1,60 @@
+﻿<Window x:Class="DetailsView_NestedLevel.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:interactivity="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:local="clr-namespace:DetailsView_NestedLevel"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        Title="DetailsView_TwoLevel">
+    <Window.DataContext>
+        <local:OrderInfoRepositiory />
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="200" />
+        </Grid.ColumnDefinitions>
+        <syncfusion:SfDataGrid Name="datagrid"
+                               Grid.Column="0"
+                               AutoGenerateColumns="False"
+                               ItemsSource="{Binding OrderInfoCollection}"
+                               NavigationMode="Cell">
+            <interactivity:Interaction.Behaviors>
+                <local:SelectionBehaviour DetailsViewCurrentItem="{Binding FirstNestedCurrentDetails,
+                                                                           Mode=TwoWay}"
+                                          DetailsViewSelectedItem="{Binding SelectedFirstNestedGridOrderDetails,
+                                                                            Mode=TwoWay}"
+                                          DetailsViewSelectedItems="{Binding FirstNestedGridSelectedItems,
+                                                                             Mode=TwoWay}" />
+            </interactivity:Interaction.Behaviors>
+
+            <syncfusion:SfDataGrid.Columns>
+                <syncfusion:GridTextColumn HeaderText="Order ID" MappingName="OrderID" />
+                <syncfusion:GridTextColumn HeaderText="Customer ID" MappingName="CustomerID" />
+                <syncfusion:GridTextColumn HeaderText="Customer Name" MappingName="CustomerName" />
+                <syncfusion:GridTextColumn HeaderText="Country" MappingName="Country" />
+                <syncfusion:GridTextColumn HeaderText="Ship City" MappingName="ShipCity" />
+            </syncfusion:SfDataGrid.Columns>
+            <syncfusion:SfDataGrid.DetailsViewDefinition>
+                <syncfusion:GridViewDefinition RelationalColumn="ProductDetails">
+                    <syncfusion:GridViewDefinition.DataGrid>
+                        <syncfusion:SfDataGrid x:Name="DetailsViewGrid"
+                                               AllowEditing="True"
+                                               AutoGenerateColumns="False"
+                                               NavigationMode="Cell">
+                            <syncfusion:SfDataGrid.Columns>
+                                <syncfusion:GridTextColumn HeaderText="Order ID" MappingName="OrderID" />
+                                <syncfusion:GridTextColumn HeaderText="Product Name" MappingName="ProductName" />
+                            </syncfusion:SfDataGrid.Columns>
+                        </syncfusion:SfDataGrid>
+                    </syncfusion:GridViewDefinition.DataGrid>
+                </syncfusion:GridViewDefinition>
+            </syncfusion:SfDataGrid.DetailsViewDefinition>
+        </syncfusion:SfDataGrid>
+        <StackPanel Grid.Column="1" Orientation="Vertical">
+            <TextBlock Foreground="Blue" Text="DetilsView SelectedItem ProductName" />
+            <TextBlock Text="{Binding Path=SelectedFirstNestedGridOrderDetails.ProductName, Mode=TwoWay, UpdateSourceTrigger=LostFocus}" />
+            <TextBlock Foreground="Blue" Text="DetailsView CurrentItem ProductName" />
+            <TextBlock Text="{Binding Path=FirstNestedCurrentDetails.ProductName, Mode=TwoWay, UpdateSourceTrigger=LostFocus}" />
+        </StackPanel>
+    </Grid>
+</Window>

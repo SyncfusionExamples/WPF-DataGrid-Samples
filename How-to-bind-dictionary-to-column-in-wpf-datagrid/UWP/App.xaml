@@ -1,0 +1,13 @@
+﻿<Application
+    x:Class="SfDataGridDemo.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SfDataGridDemo"
+    RequestedTheme="Light">
+    <Application.Resources>
+        <DataTemplate x:Key="cellTemplate">
+            <TextBlock Text="{Binding EmployeeID}" Foreground="Green"/>
+        </DataTemplate>
+    </Application.Resources>
+
+</Application>

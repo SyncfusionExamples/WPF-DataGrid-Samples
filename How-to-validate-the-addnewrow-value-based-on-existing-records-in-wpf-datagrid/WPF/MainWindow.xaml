@@ -1,0 +1,39 @@
+﻿<Window x:Class="SfDataGridDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:SfDataGridDemo"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        Title="SfDataGrid Demo"  WindowStartupLocation="CenterScreen"
+        Icon="App.ico" Width="1024" Height="710">
+    <Window.DataContext>
+        <local:UserInfoViewModel />
+    </Window.DataContext>
+
+    <Grid>
+      <syncfusion:SfDataGrid x:Name="sfGrid"
+                                   Grid.Row="1"
+                                   ColumnSizer="Star"
+                                   AllowEditing="True"
+                                   AddNewRowPosition="Top"
+                                   AutoGenerateColumns="False"
+                                   GridValidationMode="InView"
+                                   ItemsSource="{Binding UserDetails}"
+                                   ShowRowHeader="True">
+
+            <syncfusion:SfDataGrid.Columns>
+                <syncfusion:GridTextColumn MappingName="Name" />
+                <syncfusion:GridTextColumn HeaderText="User ID" MappingName="UserId" />
+                <syncfusion:GridDateTimeColumn Width="120"
+                                               MappingName="DateofBirth"
+                                               TextAlignment="Right" />
+                <syncfusion:GridTextColumn HeaderText="Contact No" MappingName="ContactNo" />
+                <syncfusion:GridNumericColumn Width="100"
+                                                  
+                                                  MappingName="Salary" />
+                <syncfusion:GridTextColumn HeaderText="City" MappingName="City" />
+
+            </syncfusion:SfDataGrid.Columns>
+        </syncfusion:SfDataGrid>
+
+    </Grid>
+</Window>

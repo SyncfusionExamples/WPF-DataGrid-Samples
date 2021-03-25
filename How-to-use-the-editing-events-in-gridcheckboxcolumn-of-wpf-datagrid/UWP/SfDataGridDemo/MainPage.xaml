@@ -1,0 +1,34 @@
+﻿<Page
+    x:Class="SfDataGridDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:SfDataGridDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"   
+    xmlns:Syncfusion="using:Syncfusion.UI.Xaml.Grid"
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <local:ViewModel/>
+    </Page.DataContext>
+
+    <Grid>
+        <Syncfusion:SfDataGrid x:Name="datagrid"
+                               AllowEditing="True"
+                               AllowFiltering="True"
+                               AllowSorting="True"
+                               AutoGenerateColumns="False"
+                               AllowGrouping="True"
+                               ShowGroupDropArea="True"
+                               ItemsSource="{Binding GDCSource}">
+            <Syncfusion:SfDataGrid.Columns>
+                <Syncfusion:GridTextColumn MappingName="EmployeeName" />
+                <Syncfusion:GridTextColumn MappingName="EmployeeAge" />
+                <Syncfusion:GridTextColumn MappingName="EmployeeArea" />
+                <Syncfusion:GridTextColumn MappingName="EmployeeGender" />
+                <Syncfusion:GridDateTimeColumn MappingName="EmployeeDate" />
+                <Syncfusion:GridCheckBoxColumn MappingName="Review" />
+            </Syncfusion:SfDataGrid.Columns>
+        </Syncfusion:SfDataGrid>
+    </Grid>
+</Page>

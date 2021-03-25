@@ -1,0 +1,33 @@
+﻿<Page x:Class="SfDataGridDemo.MainPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="using:SfDataGridDemo"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:Syncfusion="using:Syncfusion.UI.Xaml.Grid"
+      mc:Ignorable="d">
+
+    <Page.DataContext>
+        <local:ViewModel />
+    </Page.DataContext>
+
+
+    <Grid>
+        <Syncfusion:SfDataGrid Name="sfdatagrid"
+                               AllowEditing="True"
+                               AllowGrouping="True"
+                               AutoGenerateColumns="False"
+                               ColumnSizer="Star"
+                               ItemsSource="{Binding StudentDetails}"
+                               ShowGroupDropArea="True">
+            <Syncfusion:SfDataGrid.Columns>
+                <Syncfusion:GridTextColumn  MappingName="StudentID" />
+                <Syncfusion:GridTextColumn  MappingName="StudentName" />
+
+                <Syncfusion:GridTextColumn  MappingName="Major" />
+                <Syncfusion:GridTextColumn  MappingName="Marks[Subject1]" />
+                <Syncfusion:GridTextColumn MappingName="Marks[Subject2]" />
+            </Syncfusion:SfDataGrid.Columns>
+        </Syncfusion:SfDataGrid>
+    </Grid>
+</Page>

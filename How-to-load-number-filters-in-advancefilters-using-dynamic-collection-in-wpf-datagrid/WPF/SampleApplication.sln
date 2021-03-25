@@ -1,0 +1,41 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NullValue_Filtering", "NullValue_Filtering.csproj", "{D995A663-CC20-4784-9BFB-C489212908B4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syncfusion.SfGrid.WPF_2013", "E:\Source\trunk\WPF\SfGrid.WPF\Src\Syncfusion.SfGrid.WPF_2013.csproj", "{B69DA0AB-B429-4897-827D-C9207594F898}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Syncfusion.Data.WPF_2013", "E:\Source\trunk\WPF\Data.WPF\Src\Syncfusion.Data.WPF_2013.csproj", "{89ACCF12-3728-4D9E-A776-AED74C82491E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+		Release-XML|Any CPU = Release-XML|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D995A663-CC20-4784-9BFB-C489212908B4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D995A663-CC20-4784-9BFB-C489212908B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D995A663-CC20-4784-9BFB-C489212908B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D995A663-CC20-4784-9BFB-C489212908B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D995A663-CC20-4784-9BFB-C489212908B4}.Release-XML|Any CPU.ActiveCfg = Release|Any CPU
+		{D995A663-CC20-4784-9BFB-C489212908B4}.Release-XML|Any CPU.Build.0 = Release|Any CPU
+		{B69DA0AB-B429-4897-827D-C9207594F898}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B69DA0AB-B429-4897-827D-C9207594F898}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B69DA0AB-B429-4897-827D-C9207594F898}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B69DA0AB-B429-4897-827D-C9207594F898}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B69DA0AB-B429-4897-827D-C9207594F898}.Release-XML|Any CPU.ActiveCfg = Release-XML|Any CPU
+		{B69DA0AB-B429-4897-827D-C9207594F898}.Release-XML|Any CPU.Build.0 = Release-XML|Any CPU
+		{89ACCF12-3728-4D9E-A776-AED74C82491E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89ACCF12-3728-4D9E-A776-AED74C82491E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89ACCF12-3728-4D9E-A776-AED74C82491E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89ACCF12-3728-4D9E-A776-AED74C82491E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89ACCF12-3728-4D9E-A776-AED74C82491E}.Release-XML|Any CPU.ActiveCfg = Release-XML|Any CPU
+		{89ACCF12-3728-4D9E-A776-AED74C82491E}.Release-XML|Any CPU.Build.0 = Release-XML|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

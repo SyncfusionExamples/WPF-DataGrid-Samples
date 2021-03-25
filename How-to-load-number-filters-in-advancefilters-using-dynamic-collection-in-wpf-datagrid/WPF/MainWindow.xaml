@@ -1,0 +1,47 @@
+﻿<Window x:Class="NullValue_Filtering.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:NullValue_Filtering"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
+        Title="SfDataGrid"
+        Width="525"
+        Height="500">
+
+    <Window.DataContext>
+        <local:ViewModel />
+    </Window.DataContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        
+        <syncfusion:SfDataGrid Name="sfDataGrid"
+                               Grid.Row="1"
+                               AllowDeleting="True"
+                               AllowEditing="True"
+                               AllowResizingColumns="True"                               
+                               AutoGenerateColumns="False"
+                               ColumnSizer="None"
+                               ItemsSource="{Binding OrderCollectionDyn}"
+                               LiveDataUpdateMode="AllowDataShaping"
+                               NavigationMode="Cell"
+                               SelectionUnit="Row"
+                               ShowGroupDropArea="True"
+                               ShowRowHeader="True">
+            
+            <syncfusion:SfDataGrid.Columns>
+                <syncfusion:GridTextColumn MappingName="OrderID"                                           
+                                              AllowFiltering="True"/>
+                <syncfusion:GridTextColumn MappingName="CustomerName"                                              
+                                              AllowFiltering="True"/>
+                <syncfusion:GridNumericColumn MappingName="CustomerID"
+                                              AllowNullValue="True"
+                                              AllowFiltering="True"                                              
+                                              NullText="NaN"/>
+
+            </syncfusion:SfDataGrid.Columns>
+        </syncfusion:SfDataGrid>
+    </Grid>
+</Window>

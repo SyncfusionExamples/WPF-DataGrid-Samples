@@ -1,0 +1,48 @@
+﻿<Page
+    x:Class="NullValue_Filtering.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NullValue_Filtering"
+    xmlns:syncfusion="using:Syncfusion.UI.Xaml.Grid"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.DataContext>
+        <local:OrderInfoRepositiory />
+    </Page.DataContext>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="20" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <syncfusion:SfDataGrid Name="sfDataGrid"
+                               Grid.Row="1"
+                               AllowDeleting="True"
+                               AllowEditing="True"
+                               AllowResizingColumns="True"                               
+                               AutoGenerateColumns="False"
+                               ColumnSizer="None"
+                               ItemsSource="{Binding OrderCollectionDyn}"
+                               LiveDataUpdateMode="AllowDataShaping"
+                               NavigationMode="Cell"
+                               SelectionUnit="Row"
+                               ShowGroupDropArea="True"
+                               ShowRowHeader="True">
+
+            <syncfusion:SfDataGrid.Columns>
+                <syncfusion:GridTextColumn MappingName="OrderID"                                           
+                                              AllowFiltering="True"/>
+                <syncfusion:GridTextColumn MappingName="CustomerName"                                              
+                                              AllowFiltering="True"/>
+                <syncfusion:GridNumericColumn MappingName="CustomerID"                                              
+                                              AllowFiltering="True"     
+                                              WaterMark="NaN"
+                                              AllowNullInput="True"                                               
+                                              />
+            </syncfusion:SfDataGrid.Columns>
+        </syncfusion:SfDataGrid>
+    </Grid>
+</Page>

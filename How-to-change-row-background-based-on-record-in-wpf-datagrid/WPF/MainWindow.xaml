@@ -1,0 +1,36 @@
+﻿<Window x:Class="ManualRefresh.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Syncfusion="clr-namespace:Syncfusion.UI.Xaml.Grid;assembly=Syncfusion.SfGrid.WPF"
+        xmlns:local="clr-namespace:ManualRefresh"
+        Title="MainWindow">
+
+    <Window.Resources>
+        <local:CustomRowStyleConverter x:Key="CustomRowStyleConverter" />
+        <Style x:Key="stylecolor" TargetType="Syncfusion:VirtualizingCellsControl">
+            <Setter Property="Background" Value="{Binding Converter={StaticResource CustomRowStyleConverter}, UpdateSourceTrigger=PropertyChanged}" />
+        </Style>
+    </Window.Resources>
+    <Window.DataContext>
+        <local:ViewModel />
+    </Window.DataContext>
+    <Grid x:Name="grid">
+        <Syncfusion:SfDataGrid x:Name="datagrid"
+                               AllowEditing="True"
+                               AutoGenerateColumns="False"
+                               ItemsSource="{Binding ItemsCollection}"
+                               RowStyle="{StaticResource stylecolor}"
+                               ShowGroupDropArea="True"
+                               ShowRowHeader="True">
+            <Syncfusion:SfDataGrid.Columns>
+                <Syncfusion:GridCheckBoxColumn MappingName="IsChecked" />
+                <Syncfusion:GridTextColumn MappingName="ExperienceInMonth" />
+                <Syncfusion:GridTextColumn MappingName="EmployeeName" />
+                <Syncfusion:GridTextColumn MappingName="EmployeeAge" />
+                <Syncfusion:GridTextColumn MappingName="EmployeeSalary" />
+            </Syncfusion:SfDataGrid.Columns>
+        </Syncfusion:SfDataGrid>
+
+
+    </Grid>
+</Window>

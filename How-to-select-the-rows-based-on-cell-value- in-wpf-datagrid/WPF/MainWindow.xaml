@@ -1,0 +1,36 @@
+﻿<Window x:Class="SfDataGridDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Syncfusion="http://schemas.syncfusion.com/wpf"
+        xmlns:local="clr-namespace:SfDataGridDemo"
+        Title="SfDataGrid Demo"
+        Width="1024"
+        Height="710"
+        Icon="App.ico"
+        WindowStartupLocation="CenterScreen">
+    <Window.DataContext>
+        <local:ViewModel/>
+    </Window.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="150"/>
+        </Grid.ColumnDefinitions>
+        <Syncfusion:SfDataGrid x:Name="datagrid" 
+                                       ColumnSizer="Star"
+                                       AllowEditing="False"
+                                       SelectionMode="Extended"
+                               AllowGrouping="True"
+                               ShowGroupDropArea="True"
+                                       ItemsSource="{Binding OrderInfoCollection }">
+            <Syncfusion:SfDataGrid.Columns>
+                <Syncfusion:GridTextColumn MappingName="OrderID" HeaderText="OrderID"/>
+                <Syncfusion:GridTextColumn MappingName="CustomerID" HeaderText="CustomerID"/>
+                <Syncfusion:GridTextColumn MappingName="CustomerName" HeaderText="CustomerName"/>
+                <Syncfusion:GridTextColumn MappingName="Country" HeaderText="Country"/>
+                <Syncfusion:GridTextColumn MappingName="ShipCity" HeaderText="ShipCity"/>
+            </Syncfusion:SfDataGrid.Columns>
+        </Syncfusion:SfDataGrid>
+        <Button Click="Button_Click" Content="Click" Width="150" Grid.Column="1" Height="50" VerticalAlignment="Top"/>
+    </Grid>
+</Window>

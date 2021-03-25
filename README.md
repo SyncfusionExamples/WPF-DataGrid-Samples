@@ -37,3 +37,31 @@ Repository contains various WPF DataGrid samples.
 34. [How to scroll WPF DataGrid (SfDataGrid) when we load with in the ScrollViewer?](https://www.syncfusion.com/kb/6870/how-to-scroll-the-sfdatagrid-when-we-load-within-scrollviewer) - Demo
 35. [How to disable the hyperlink based on cell value in grid hyperlink column in WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/6869/how-to-disable-the-hyperlink-based-on-cell-value-in-gridhyperlink-column) - Demo
 36. [How to customize print preview window in WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/6868/how-to-customize-print-preview-window-in-sfdatagrid) - Demo
+37. [How to add a new row continuously without any selection to next row in WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/6867/how-to-add-a-new-row-continuously-in-addnewrow-without-moving-the-selection-to-next-row) - Demo
+38. [How to paste the copied row in AddNewRow in WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/6865/how-to-paste-the-copied-row-in-addnewrow) - Demo
+39. [How to print multiple WPF DataGrid (SfDataGrid) in a single document?](https://www.syncfusion.com/kb/6789/how-to-print-multiple-sfdatagrids-in-a-single-document) - Demo
+40. [How to localize the filter values in GridCheckBoxColumn in WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/6787/how-to-localize-the-filter-values-in-gridcheckboxcolumn) - Demo
+41. [How to load different images in GridCell based on cell value in WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/6785/how-to-load-different-images-in-gridcell-based-on-cell-value) - Demo
+42. [How to bind WPF DataGrid (SfDataGrid) with CollectionViewSource?](https://www.syncfusion.com/kb/6784/how-to-bind-sfdatagrid-with-collectionviewsource) - Demo
+43. [How to edit grid hyperlink column in WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/6770/how-to-edit-gridhyperlinkcolumn) - Demo
+44. [How to load web image in GridImageColumn of WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/6768/how-to-load-web-image-in-gridimagecolumn) - Demo
+45. [How to load number filters in AdvanceFilters using dynamic collection in WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/6766/how-to-load-numberfilters-in-advancefilters-using-dynamic-collection) - Demo
+46. [How to change the checkbox column values based on row selection in WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/6710/how-to-change-the-checkboxcolumn-values-based-on-row-selection) - Demo
+47. [How to use the editing events in GridCheckBoxColumn of WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/6705/how-to-use-the-editing-related-events-in-gridcheckboxcolumn) - Demo
+48. [How to bind the selecteditem and currentitem in DetailsViewDataGrid of WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/6704/how-to-bind-selecteditem-and-currentitem-in-detailsviewdatagrid) - Demo
+49. [How to skip editing for read-only colums in AddNewRow of WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/6702/how-to-skip-editing-for-read-only-columns-in-addnewrow) - Demo
+50. [How to load the collection in GridComboBoxColumn of WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/6701/how-to-load-the-collection-in-gridcomboboxcolumn-when-defining-datacontext-after-loading) - Demo
+51. [How to paste the empty string while using cell selection in WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/6699/how-to-paste-the-empty-string-while-using-cell-selection) - Demo
+52. [How to select the rows based on cell value in WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/6697/how-to-select-the-rows-based-on-a-cellvalue) - Demo
+53. [How to use the conditional formatting in table summary cell of WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/6674/how-to-use-conditional-formatting-in-tablesummarycell) - Demo
+54. [How to set the show duration and show delay duration for tooltip in WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/6673/how-to-set-the-tooltip-showduration-and-showdelayduration-in-sfdatagrid) - Demo
+55. [How to skip the certain column from auto row height support in WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/6671/how-to-skip-certain-columns-from-autorowheight-support) - Demo
+56. [How to display the number format info in GridSummaryColumn of WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/6669/how-to-display-the-numberformat-info-in-gridsummarycolumn) - Demo
+57. [How to change row background based on record in WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/6658/how-to-change-row-background-based-on-record) - Demo
+58. [How to change the cell value of selected cells in WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/6655/how-to-change-the-cell-value-of-selectedcells-when-end-edit) - Demo
+59. [How to clear the selection while grouping or ungrouping in WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/6650/how-to-clear-selection-while-grouping-ungrouping) - Demo
+60. [How to cancel the AddNewRow operation using Esc key from edit mode in WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/6647/how-to-cancel-the-addnewrow-operation-in-single-esc-key-from-editmode) - Demo
+61. [How to change the row background based on property in record of WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/6646/how-to-change-the-row-background-based-on-property-in-record) - Demo
+62. [How to bind dictionary to column in WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/6643/how-to-bind-dictionary-to-column-in-sfdatagrid) - Demo
+63. [How to show the number keyboard when editing GridNumericColumn in WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/6632/how-to-show-the-number-keyboard-when-editing-gridnumericcolumn) - Demo
+64. [How to validate the AddNewRow value based on existing records in WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/6596/how-to-validate-the-addnewrow-value-based-on-already-existing-records) - Demo

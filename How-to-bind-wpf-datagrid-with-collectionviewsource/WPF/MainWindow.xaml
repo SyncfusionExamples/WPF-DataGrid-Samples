@@ -1,0 +1,36 @@
+﻿<Window x:Class="SfDataGridDemo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:Syncfusion="http://schemas.syncfusion.com/wpf"
+        xmlns:local="clr-namespace:SfDataGridDemo"
+        Title="SfDataGrid Demo"
+        Width="1024"
+        Height="710"
+        Icon="App.ico"
+        WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <local:ViewModel x:Key="country" />
+    </Window.Resources>
+    <Grid DataContext="{StaticResource country}">
+        <Syncfusion:SfDataGrid x:Name="datagrid"
+                               AllowEditing="True"
+                               AllowFiltering="True"
+                               AllowGrouping="True"
+                               AllowSorting="True"
+                               AutoGenerateColumns="False"
+                               ItemsSource="{Binding Employee}"
+                               ShowGroupDropArea="True">
+            <Syncfusion:SfDataGrid.Columns>
+                <Syncfusion:GridTextColumn MappingName="EmployeeName" />
+                <Syncfusion:GridTextColumn MappingName="EmployeeAge" />
+                <Syncfusion:GridTextColumn MappingName="EmployeeGender" />
+                <Syncfusion:GridComboBoxColumn DisplayMemberPath="Country"
+                                               ItemsSource="{Binding ProductsView,
+                                                                     Source={StaticResource country}}"
+                                               MappingName="CountryCode"
+                                               SelectedValuePath="CountryCode" />
+                <Syncfusion:GridCheckBoxColumn MappingName="Review" />
+            </Syncfusion:SfDataGrid.Columns>
+        </Syncfusion:SfDataGrid>
+    </Grid>
+</Window>
