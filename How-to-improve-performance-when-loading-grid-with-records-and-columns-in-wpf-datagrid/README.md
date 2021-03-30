@@ -1,8 +1,8 @@
 # How to improve performance when loading grid with records and columns in WPF DataGrid (SfDataGrid)?
 
-This sample show cases how to improve the performance when loading the grid with more records and columns in [WPF DataGrid](https://www.syncfusion.com/wpf-ui-controls/datagrid) (SfDataGrid).
+This sample show cases how to improve the performance when loading the grid with more records and columns in [WPF DataGrid](https://www.syncfusion.com/wpf-controls/datagrid) (SfDataGrid).
 
-The loading performance of [WPF DataGrid](https://www.syncfusion.com/wpf-ui-controls/datagrid) (SfDataGrid) can be improved in following ways to provide better performance when loading millions of records with 1000+ columns,
+The loading performance of [WPF DataGrid](https://www.syncfusion.com/wpf-controls/datagrid) (SfDataGrid) can be improved in following ways to provide better performance when loading millions of records with 1000+ columns,
 
 1. Set `EnableDataVirtualization` as `true` for improving loading and data operations performance, where DataGrid will get loaded and process the data immediately regardless of number of records.
 
