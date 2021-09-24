@@ -18,5 +18,8 @@ private void Sfgrid_AutoGeneratingColumn(object sender, Syncfusion.UI.Xaml.Grid.
     }
 }   
 ```
+
+KB article - [How to set StackedHeaders when AutoGenerateColumn as true in WPF DataGrid(SfDataGrid)?](https://www.syncfusion.com/kb/11775/how-to-set-stackedheaders-when-autogeneratecolumn-as-true-in-wpf-datagridsfdatagrid)
+
 ## Requirements to run the demo
  Visual Studio 2015 and above versions
