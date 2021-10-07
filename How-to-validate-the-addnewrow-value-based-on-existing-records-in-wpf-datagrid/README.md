@@ -3,3 +3,5 @@
 This sample show cases how to validate the AddNewRow value based on the existing records in [WPF DataGrid](https://www.syncfusion.com/wpf-controls/datagrid) (SfDataGrid).
 
 You can validate the newly adding row value based on the existing records by using [CurrentCellValidating](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml.Grid.SfDataGrid.html#Syncfusion_UI_Xaml_Grid_SfDataGrid_CurrentCellValidating) event in [WPF DataGrid](https://www.syncfusion.com/wpf-controls/datagrid) (SfDataGrid).
+
+KB article - [How to validate the AddNewRow value based on existing records in WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/6596/how-to-validate-the-addnewrow-value-based-on-existing-records-in-wpf-datagrid-sfdatagrid)
