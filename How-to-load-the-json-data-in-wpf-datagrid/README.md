@@ -7,3 +7,5 @@ The JSON data cannot be directly bound to the [WPF DataGrid](https://www.syncfus
 The JSON data can be parsed into a DataTable collection using **JsonConvert.DeSerializeObject<List<Dictionary<string, object>>(json_object)**.
 
 You can convert the list dictionary objects to the `ObservableCollection` if your data source should respond the collection changes.
+
+KB article - [How to load the JSON data in WPF DataGrid (SfDataGrid)](https://www.syncfusion.com/kb/9377/how-to-load-the-json-data-in-wpf-datagrid-sfdatagrid)
