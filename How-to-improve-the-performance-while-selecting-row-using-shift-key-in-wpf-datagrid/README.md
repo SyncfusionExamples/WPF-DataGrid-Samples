@@ -5,3 +5,5 @@
 This sample show cases how to improve the performance while selecting the row using shift key in [WPF DataGrid](https://www.syncfusion.com/wpf-controls/datagrid) (SfDataGrid).
 
 You can improve the performance of selecting the rows using Shift key by overriding the [GridSelectionController.SelectRows](https://help.syncfusion.com/cr/wpf/Syncfusion.UI.Xaml.Grid.GridSelectionController.html#Syncfusion_UI_Xaml_Grid_GridSelectionController_SelectRows_System_Int32_System_Int32_) method in [WPF DataGrid](https://www.syncfusion.com/wpf-controls/datagrid) (SfDataGrid).
+
+KB article - [How to improve the performance while selecting row using shift key in WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/9434/how-to-improve-the-performance-while-selecting-row-using-shift-key-in-wpf-datagrid)
