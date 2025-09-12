@@ -153,7 +153,7 @@ Task "ResolveAssemblyReference"
       C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\
   LatestTargetFrameworkDirectories:
   ProfileTablesLocation:
-  Primary reference "mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089".
+  Primary reference "mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken="UseYourOwnPublicKeyToken".
       Resolved file path is "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\mscorlib.dll".
       Reference found at search path location "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\mscorlib.dll".
       This reference is not "CopyLocal" because it's a prerequisite file.
@@ -189,7 +189,7 @@ Task "ResolveAssemblyReference"
       Found related file "C:\Program Files (x86)\Syncfusion\Essential Studio\15.2.0.40\Assemblies\4.6\Syncfusion.Data.WPF.xml".
       This reference is not "CopyLocal" because it's registered in the GAC.
       The ImageRuntimeVersion for this reference is "v4.0.30319".
-  Primary reference "System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089".
+  Primary reference "System, Version=4.0.0.0, Culture=neutral, PublicKeyToken=UseYourOwnPublicKeyToken".
       Resolved file path is "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.dll".
       Reference found at search path location "{TargetFrameworkDirectory}".
           For SearchPath "C:\Program Files (x86)\Syncfusion\Essential Studio\15.2.0.40\\Assemblies\4.6".
@@ -200,7 +200,7 @@ Task "ResolveAssemblyReference"
           Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.winmd", but it didn't exist.
       This reference is not "CopyLocal" because it's a prerequisite file.
       The ImageRuntimeVersion for this reference is "v4.0.30319".
-  Primary reference "System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089".
+  Primary reference "System.Data, Version=4.0.0.0, Culture=neutral, PublicKeyToken=UseYourOwnPublicKeyToken".
       Resolved file path is "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.Data.dll".
       Reference found at search path location "{TargetFrameworkDirectory}".
           For SearchPath "C:\Program Files (x86)\Syncfusion\Essential Studio\15.2.0.40\\Assemblies\4.6".
@@ -211,7 +211,7 @@ Task "ResolveAssemblyReference"
           Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.Data.winmd", but it didn't exist.
       This reference is not "CopyLocal" because it's a prerequisite file.
       The ImageRuntimeVersion for this reference is "v4.0.30319".
-  Primary reference "System.Data.Linq, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089".
+  Primary reference "System.Data.Linq, Version=4.0.0.0, Culture=neutral, PublicKeyToken=UseYourOwnPublicKeyToken".
       Resolved file path is "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.Data.Linq.dll".
       Reference found at search path location "{TargetFrameworkDirectory}".
           For SearchPath "C:\Program Files (x86)\Syncfusion\Essential Studio\15.2.0.40\\Assemblies\4.6".
@@ -222,7 +222,7 @@ Task "ResolveAssemblyReference"
           Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.Data.Linq.winmd", but it didn't exist.
       This reference is not "CopyLocal" because it's a prerequisite file.
       The ImageRuntimeVersion for this reference is "v4.0.30319".
-  Primary reference "System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089".
+  Primary reference "System.Xml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=UseYourOwnPublicKeyToken".
       Resolved file path is "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.Xml.dll".
       Reference found at search path location "{TargetFrameworkDirectory}".
           For SearchPath "C:\Program Files (x86)\Syncfusion\Essential Studio\15.2.0.40\\Assemblies\4.6".
@@ -244,7 +244,7 @@ Task "ResolveAssemblyReference"
           Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\Microsoft.CSharp.winmd", but it didn't exist.
       This reference is not "CopyLocal" because it's a prerequisite file.
       The ImageRuntimeVersion for this reference is "v4.0.30319".
-  Primary reference "System.Xml.Linq, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089".
+  Primary reference "System.Xml.Linq, Version=4.0.0.0, Culture=neutral, PublicKeyToken=UseYourOwnPublicKeyToken".
       Resolved file path is "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.Xml.Linq.dll".
       Reference found at search path location "{TargetFrameworkDirectory}".
           For SearchPath "C:\Program Files (x86)\Syncfusion\Essential Studio\15.2.0.40\\Assemblies\4.6".
@@ -255,7 +255,7 @@ Task "ResolveAssemblyReference"
           Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.Xml.Linq.winmd", but it didn't exist.
       This reference is not "CopyLocal" because it's a prerequisite file.
       The ImageRuntimeVersion for this reference is "v4.0.30319".
-  Primary reference "System.Data.DataSetExtensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089".
+  Primary reference "System.Data.DataSetExtensions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=UseYourOwnPublicKeyToken".
       Resolved file path is "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.Data.DataSetExtensions.dll".
       Reference found at search path location "{TargetFrameworkDirectory}".
           For SearchPath "C:\Program Files (x86)\Syncfusion\Essential Studio\15.2.0.40\\Assemblies\4.6".
@@ -266,7 +266,7 @@ Task "ResolveAssemblyReference"
           Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.Data.DataSetExtensions.winmd", but it didn't exist.
       This reference is not "CopyLocal" because it's a prerequisite file.
       The ImageRuntimeVersion for this reference is "v4.0.30319".
-  Primary reference "System.Xaml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089".
+  Primary reference "System.Xaml, Version=4.0.0.0, Culture=neutral, PublicKeyToken=UseYourOwnPublicKeyToken".
       Resolved file path is "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.Xaml.dll".
       Reference found at search path location "{TargetFrameworkDirectory}".
           For SearchPath "C:\Program Files (x86)\Syncfusion\Essential Studio\15.2.0.40\\Assemblies\4.6".
@@ -310,7 +310,7 @@ Task "ResolveAssemblyReference"
           Considered "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\PresentationFramework.winmd", but it didn't exist.
       This reference is not "CopyLocal" because it's a prerequisite file.
       The ImageRuntimeVersion for this reference is "v4.0.30319".
-  Primary reference "System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089".
+  Primary reference "System.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=UseYourOwnPublicKeyToken".
       Resolved file path is "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.Core.dll".
       Reference found at search path location "{TargetFrameworkDirectory}".
           For SearchPath "C:\Program Files (x86)\Syncfusion\Essential Studio\15.2.0.40\\Assemblies\4.6".
