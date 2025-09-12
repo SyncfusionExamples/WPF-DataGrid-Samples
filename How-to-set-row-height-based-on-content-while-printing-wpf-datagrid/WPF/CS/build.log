@@ -393,7 +393,7 @@ Task "ResolveAssemblyReference"
       Required by "Syncfusion.Shared.Wpf".
       This reference is not "CopyLocal" because it's a prerequisite file.
       The ImageRuntimeVersion for this reference is "v4.0.30319".
-  Dependency "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089".
+  Dependency "System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=UseYourOwnPublicKeyToken".
       Resolved file path is "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.Windows.Forms.dll".
       Reference found at search path location "{TargetFrameworkDirectory}".
           For SearchPath "C:\Program Files (x86)\Syncfusion\Essential Studio\15.2.0.40\Assemblies\4.6".
@@ -464,7 +464,7 @@ Task "ResolveAssemblyReference"
       Required by "Syncfusion.SampleLayout".
       This reference is not "CopyLocal" because it's a prerequisite file.
       The ImageRuntimeVersion for this reference is "v4.0.30319".
-  Dependency "System.Runtime.Serialization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089".
+  Dependency "System.Runtime.Serialization, Version=4.0.0.0, Culture=neutral, PublicKeyToken=UseYourOwnPublicKeyToken".
       Resolved file path is "C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.6\System.Runtime.Serialization.dll".
       Reference found at search path location "{TargetFrameworkDirectory}".
           For SearchPath "C:\Program Files (x86)\Syncfusion\Essential Studio\15.2.0.40\Assemblies\4.6".
