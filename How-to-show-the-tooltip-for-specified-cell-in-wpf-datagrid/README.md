@@ -3,3 +3,5 @@
 This sample show cases how to show the tooltip for specified cell in [WPF DataGrid](https://www.syncfusion.com/wpf-controls/datagrid) (SfDataGrid).
 
 You can display the information of a specified GridCell as tooltip in [WPF DataGrid](https://www.syncfusion.com/wpf-controls/datagrid) (SfDataGrid) by getting the cell information from the cell index resolved from the mouse hover position by `VisualContainer.PointToCellRowColumnIndex`.
+
+KB article - [How to show the tooltip for specified cell in WPF DataGrid (SfDataGrid)?](https://www.syncfusion.com/kb/9338/how-to-show-the-tooltip-for-specified-cell-in-wpf-datagrid-sfdatagrid)
